@@ -28,4 +28,7 @@ class producto extends Model
     public function compras(){
         return $this->belongsToMany(compra::class);
     }
+    public function detallecompra(){
+        return $this->hasMany(DetalleCompra::class,'producto_id','codigo');
+    }
 }
