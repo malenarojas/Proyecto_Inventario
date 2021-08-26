@@ -21,7 +21,7 @@ class CreateVentaTable extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('personal_id')->on('personal')->references('idpersonal')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('personal_id')->on('personal')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('cliente_id')->on('cliente')->references('id_cliente')->onDelete('cascade')->onUpdate('cascade');
         });
     }

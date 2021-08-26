@@ -15,17 +15,15 @@ class CreateCompraTable extends Migration
     {
         Schema::create('compra', function (Blueprint $table) {
             $table->id();
-            //$table->date('fecha');
-            //$table->time('hora');
-            $table->float('total$');
+            $table->float('total_USD');
             $table->float('tipo_cambio');
-            $table->float('totalBs');
+            $table->float('total_BO');
             $table->date('fecha');
             $table->unsignedBigInteger('personal_id');
             $table->unsignedBigInteger('proveedor_id');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('personal_id')->on('personal')->references('idpersonal')->onDelete('cascade');
+            $table->foreign('personal_id')->on('personal')->references('id')->onDelete('cascade');
             $table->foreign('proveedor_id')->on('proveedor')->references('id_proveedor')->onDelete('cascade');
         });
     }

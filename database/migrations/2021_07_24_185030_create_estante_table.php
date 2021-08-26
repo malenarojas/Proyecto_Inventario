@@ -14,7 +14,7 @@ class CreateEstanteTable extends Migration
     public function up()
     {
         Schema::create('estante', function (Blueprint $table) {
-            $table->id('num_estante');
+            $table->id();
             $table->string('descripcion',100);
             $table->timestamps();
         });

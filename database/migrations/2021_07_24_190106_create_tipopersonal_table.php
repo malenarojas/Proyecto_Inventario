@@ -6,25 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTipopersonalTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('tipopersonal', function (Blueprint $table) {
-            $table->id('id');
-            $table->String('cargo','30');
+            $table->id();
+            $table->String('cargo',50);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('tipopersonal');

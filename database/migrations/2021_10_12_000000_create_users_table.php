@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('personal_id');
             $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes();
-            $table->foreign('personal_id')->on('personal')->references('idpersonal')->onDelete('cascade')->onUpdate('cascade');
+            //$$table->softDeletes();
+            $table->foreign('personal_id')->on('personal')->references('id')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

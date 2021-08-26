@@ -16,13 +16,12 @@ class CreateDetalleCompraTable extends Migration
         Schema::create('detalle_compra', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('compra_id');
-            $table->unsignedBigInteger('producto_id');
+            $table->String('producto_id');
             $table->integer('cantidad');
             $table->float('precio_unitario');
-            $table->float('subtotal$');
+            $table->float('subtotal_USD');
             $table->float('tipo_cambio');
-            $table->float('subtotalBs');
-
+            $table->float('subtotal_BO');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('compra_id')->on('compra')->references('id')->onDelete('cascade');

@@ -16,13 +16,12 @@ class CreateDetalleVentaTable extends Migration
         Schema::create('detalle_venta', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('venta_id');
-            $table->unsignedBigInteger('producto_id');
+            $table->String('producto_id');
             $table->integer('cantidad');
-            $table->float('precio_u');
-            $table->float('subtotal$');
+            $table->float('precio_unitario');
+            $table->float('subtotal_USD');
             $table->float('tipo_cambio');
-            $table->float('subtotalBS');
-
+            $table->float('subtotal_BS');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('venta_id')->on('venta')->references('id')->onDelete('cascade');

@@ -14,15 +14,15 @@ class CreateUbicacionTable extends Migration
     public function up()
     {
         Schema::create('ubicacion', function (Blueprint $table) {
-            $table->id('id_ubicacion');
+            $table->id();
             $table->String('descripcion',100);
-            $table->unsignedBigInteger('area_num');
-            $table->unsignedBigInteger('estante_num');
-            $table->unsignedBigInteger('producto_codigo');
+            $table->unsignedBigInteger('area_id');
+            $table->unsignedBigInteger('estante_id');
+            $table->String('producto_codigo');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('area_num')->on('area')->references('num_area')->onDelete('cascade');
-            $table->foreign('estante_num')->on('estante')->references('num_estante')->onDelete('cascade');
+            $table->foreign('area_id')->on('area')->references('id')->onDelete('cascade');
+            $table->foreign('estante_id')->on('estante')->references('id')->onDelete('cascade');
             $table->foreign('producto_codigo')->on('producto')->references('codigo')->onDelete('cascade');
 
         });
