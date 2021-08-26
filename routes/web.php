@@ -31,6 +31,7 @@ use App\Http\Controllers\VentaController;
 
 });*/
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::group(['prefix'=>'area'],function (){
     Route::get('/',[AreaController::class,'index'])->name('area.index');
     Route::post('/',[AreaController::class,'store'])->name('area.store');
