@@ -30,6 +30,13 @@
                             <span>{{$message}}</span>
                             @enderror
                         </div>
+                        <div>
+                            <label for="tipo_cambio">Tipo Cambio:</label>
+                            <input type="number" id="tipo_cambio" name="tipo_cambio" value="{{old('tipo_cambio')}}">
+                            @error('tipo_cambio')
+                            <span>{{$message}}</span>
+                            @enderror
+                        </div>
                         <div class="row">
                             <input type="hidden" name="producto_codigo" id="producto_codigo" value="" required>
                             <div class="input-field col s12 m4">

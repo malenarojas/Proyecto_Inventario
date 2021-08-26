@@ -62,16 +62,22 @@ class CompraController extends Controller
         //TODO:hacer las operaciones para actualizar todos los totales
         $compra->total_USD=0.0;
         $compra->total_BO=0.0;
-
         $compra->updated_at= now();
-        $compra->save();
         $detallecompra=new DetalleCompra();
         //TODO: agregar todos los detalles correspondientes
         $detallecompra->compra_id=$compra->id;
         $detallecompra->producto_id=$request->input('producto_codigo');
-        $detallecompra->cantidad=$request->input('cantidad');
-        $detallecompra->precio_unitario->
+        $cantidad=$detallecompra->cantidad=$request->input('cantidad');
+        $precio_u=$detallecompra->precio_unitario->input('precio_unitario');
+        $subtotal_USD=$detallecompra->subtotal_USD=($cantidad*$precio_u);
+        $tipo_cambio=$detallecompra->tipo_cambio->input('tipo_cambio');
+        $detallecompra->subtotal_BO=($subtotal_USD*$tipo_cambio);
+        $compra->total_USD=$subtotal_USD+$subtotal_USD;
+        $compra->total_BO=$subtotal_USD*$tipo_cambio;
+        $compra->save();
         $detallecompra->save();
+
+
         return view('compra.show',$compra->id);
     }
 
