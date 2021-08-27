@@ -25,9 +25,9 @@ class CompraSeeder extends Seeder
         DB::table('compra')->insert(['total_USD' => '30','tipo_cambio'=>'6.96','total_BO'=>'208.08','fecha'=>'4/5/2021','personal_id'=>'133','proveedor_id'=>'125']);
         DB::table('compra')->insert(['total_USD' => '10','tipo_cambio'=>'6.96','total_BO'=>'69.60','fecha'=>'3/4/2021','personal_id'=>'133','proveedor_id'=>'126']);
 
-        DB::table('detalle_compra')->insert(['id'=>'1','compra_id' => '1','producto_id'=>'755-B','cantidad'=>'100','precio_unitario'=>'5','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
-        DB::table('detalle_compra')->insert(['id'=>'2','compra_id' => '2','producto_id'=>'7547545','cantidad'=>'3','precio_unitario'=>'4','subtotal_USD'=>'134','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
-        DB::table('detalle_compra')->insert(['id'=>'3','compra_id' => '3','producto_id'=>'755-B','cantidad'=>'2','precio_unitario'=>'5','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
-        DB::table('detalle_compra')->insert(['id'=>'4','compra_id' => '4','producto_id'=>'93400-0200','cantidad'=>'6','precio_unitario'=>'7','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
+        DB::table('detalle_compra')->insert(['compra_id' => '1','producto_id'=>'755-B','cantidad'=>'100','precio_unitario'=>'5','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
+        DB::table('detalle_compra')->insert(['compra_id' => '2','producto_id'=>'7547545','cantidad'=>'3','precio_unitario'=>'4','subtotal_USD'=>'134','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
+        DB::table('detalle_compra')->insert(['compra_id' => '3','producto_id'=>'755-B','cantidad'=>'2','precio_unitario'=>'5','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
+        DB::table('detalle_compra')->insert(['compra_id' => '4','producto_id'=>'93400-0200','cantidad'=>'6','precio_unitario'=>'7','subtotal_USD'=>'133','tipo_cambio'=>'6.96','subtotal_BO'=>'123']);
     }
 }

@@ -2,7 +2,7 @@
 @section('titulo','index compra')
 @section('contenido')
     <div class="row">
-        <div class="col s6">
+        <div class=" card col s4">
             <span>Datos de las compras</span>
             <div>
                 <p> id {{$compra->id}}</p>
@@ -14,11 +14,9 @@
                 <p>proveedor id {{$compra->proveedor_id}}</p>
             </div>
         </div>
-        <div class="col s6">
+        <div class="card col s8">
             <div class="row">
-                <div class="col s12 m4">
-                </div>
-                <div class="col s12 m4 " >
+                <div class="col s12 m12 "  >
                     <form  method="POST" action="{{route('compra.update',[$compra->id])}}">
                         @csrf
                         @method('PUT')
@@ -32,7 +30,7 @@
                         </div>
                         <div>
                             <label for="tipo_cambio">Tipo Cambio:</label>
-                            <input type="number" id="tipo_cambio" name="tipo_cambio" value="{{old('tipo_cambio')}}">
+                            <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="{{old('tipo_cambio')}}">
                             @error('tipo_cambio')
                             <span>{{$message}}</span>
                             @enderror
@@ -48,6 +46,13 @@
                             </div>
                             <div class="input-field col s12 m6">
                                 <input type="text" name="nombre_producto" id="nombre_producto" disabled>
+                            </div>
+                            <div>
+                                <label for="precio_unitario">Precio Unitario:</label>
+                                <input type="number" id="precio_unitario" name="precio_unitario" step="any" value="{{old('precio_unitario')}}">
+                                @error('precio_unitario')
+                                <span>{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                         <div>
@@ -77,6 +82,7 @@
                         <td>subtotal_USD</td>
                         <td>tipo cambio</td>
                         <td>subtotal_BO</td>
+                        <td>ACCIONES</td>
 
                     </tr>
                     </thead>
@@ -92,7 +98,7 @@
                             <td>{{$detalle->tipo_cambio}}</td>
                             <td>{{$detalle->subtotal_BO}}</td>
                             <td>
-                                {{--<a href="{{route('det.destroy',$compra->id)}}">destroy</a>--}}
+                                <a href="{{route('compra.eliminar_detalle',[$compra->id,$detalle->id])}}">destroy</a>
                             </td>
                         </tr>
                     @endforeach

@@ -142,6 +142,7 @@ Route::group(['prefix'=>'compra'],function (){
     Route::put('/{id}',[CompraController::class,'update'])->name('compra.update');
     Route::get('/{id}/edit',[CompraController::class,'edit'])->name('compra.edit');
     Route::get('/{id}/destroy',[CompraController::class,'destroy'])->name('compra.destroy');
+    Route::get('/eliminar_detalle/{id_compra}/{id_detalle}',[CompraController::class,'eliminar_detalle'])->name('compra.eliminar_detalle');
 });
 Route::group(['prefix'=>'cliente'],function (){
     Route::get('/',[ClienteController::class,'index'])->name('cliente.index');

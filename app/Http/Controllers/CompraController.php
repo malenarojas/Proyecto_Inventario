@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DetalleCompra;
 use Illuminate\Http\Request;
 use App\Models\Compra;
+use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
@@ -37,7 +38,7 @@ class CompraController extends Controller
         $compra->updated_at= now();
         $compra->save();
 
-        return redirect()->route('compra.index');
+        return redirect()->route('compra.show',$compra);
     }
 
 
@@ -58,33 +59,54 @@ class CompraController extends Controller
 
     public function update(Request $request, $id)
     {
+        //dd($request);
         $compra=Compra::findOrFail($id);
-        //TODO:hacer las operaciones para actualizar todos los totales
-        $compra->total_USD=0.0;
-        $compra->total_BO=0.0;
-        $compra->updated_at= now();
         $detallecompra=new DetalleCompra();
-        //TODO: agregar todos los detalles correspondientes
         $detallecompra->compra_id=$compra->id;
         $detallecompra->producto_id=$request->input('producto_codigo');
-        $cantidad=$detallecompra->cantidad=$request->input('cantidad');
-        $precio_u=$detallecompra->precio_unitario->input('precio_unitario');
-        $subtotal_USD=$detallecompra->subtotal_USD=($cantidad*$precio_u);
-        $tipo_cambio=$detallecompra->tipo_cambio->input('tipo_cambio');
+        $detallecompra->cantidad=$request->input('cantidad');
+        $cantidad=$request->input('cantidad');
+        $detallecompra->precio_unitario=$request->input('precio_unitario');
+        $precio_u=$request->input('precio_unitario');
+        $detallecompra->subtotal_USD=($cantidad*$precio_u);
+        $subtotal_USD=($cantidad*$precio_u);
+        $detallecompra->tipo_cambio=$request->input('tipo_cambio');
+        $tipo_cambio=$request->input('tipo_cambio');
         $detallecompra->subtotal_BO=($subtotal_USD*$tipo_cambio);
-        $compra->total_USD=$subtotal_USD+$subtotal_USD;
-        $compra->total_BO=$subtotal_USD*$tipo_cambio;
-        $compra->save();
         $detallecompra->save();
-
-
-        return view('compra.show',$compra->id);
+        $compra->total_USD=$compra->total_USD+$subtotal_USD;
+        $compra->total_BO=$compra->total_BO+($subtotal_USD*$tipo_cambio);
+        $compra->updated_at= now();
+        $compra->save();
+        //TODO:PRIMERO HACER UN WHERE Y OBTENER LA CANTIDAD DEL PRODUCTO (WHERE)(FOREACH)
+        //DESCOMENTAR EL UPDATE Y ACTUALIZAR EL PRECIO Y LA CANTIDAD OBTENIDA ANTERIOR MENTE SUMANDOLE LA NUEVA QUE MANDA REQUEST
+        /*$producto_codigo = $request->input('producto_codigo');
+        $precio_unitario = $request->input('precio_unitario');
+        //return $compra;
+        DB::table('producto')
+            ->where('codigo', $producto_codigo)
+            ->update([
+                'precio_compra_USD'=>$precio_unitario,
+            ]);*/
+        return redirect()->route('compra.show',$compra);
     }
 
 
-    public function destroy($id)
+    public function eliminar_detalle($id_compra,$id_detalle)
     {
-        //
+        $detalle_compra=DetalleCompra::findOrFail($id_detalle);
+        $cantidad=$detalle_compra->cantidad;
+        $subtotal_USD=$detalle_compra->subtotal_USD;
+        $cantidad_restar_BO=$detalle_compra->subtotal_BO;
+        $cantidad_restar_USD=($subtotal_USD);
+
+       $detalle_compra->delete();
+       $compra=Compra::findOrFail($id_compra);
+       $compra->total_USD=$compra->total_USD-$cantidad_restar_USD;
+       $compra->total_BO=$compra->total_BO-$cantidad_restar_BO;
+       $compra->save();
+        return redirect()->route('compra.show',$compra);
+
     }
 
 }

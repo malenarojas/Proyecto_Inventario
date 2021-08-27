@@ -162,7 +162,7 @@ class ProductoController extends Controller
     {
       //  $nombre_producto = Producto::where('nombre','like','%'.$nombre_producto.'%')->get(['id','nombre','precio']);
      $producto_codigo=$request->input('codigo');
-     $producto=Producto::where('codigo','like','%'.$producto_codigo.'%')->get(['codigo','nombre','precio_venta_BO']);
+     $producto=Producto::where('codigo','like','%'.$producto_codigo.'%')->get(['codigo','nombre','precio_compra_USD']);
      if($producto->isEmpty()){
         return 0;
      }

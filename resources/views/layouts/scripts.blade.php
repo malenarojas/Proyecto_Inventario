@@ -33,6 +33,7 @@
                             datas.forEach(data => {
                                 $('#nombre_producto').val(data.nombre);
                                 $('#producto_codigo').val(data.codigo);
+                                $('#precio_unitario').val(data.precio_compra_USD);
                                 console.log($('#producto_codigo').val(data.codigo));
                             })
                         }
@@ -79,7 +80,46 @@
             }
         })
     });
+    /*ajax para buscar a un cliente*/
+    $(function (){
+        $('#buscarcliente').keyup( function(e){
+            let cliente_id=$('#buscarcliente').val();
+            console.log('consultado');
+            console.log(cliente_id);
+            if($('#buscarcliente').val()) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/cliente/buscarcliente',
+                    type: 'GET',
+                    async: true,
+                    data: {
+                        id: proveedor_id,
+                        _token: $('input[name="_token"]').val()
+                    },
+                    success: function (response){
+                        if(response==0){
+                            console.log('No llego nada');
+                        }else{
+
+                            var datas = JSON.parse(response);
+                            datas.forEach(data => {
+                                $('#nombre_cliente').val(data.nombre);
+                                $('#cliente_id').val(data.id_cliente);
+                                console.log($('#cliente_id').val(data.id_cliente));
+                            })
+                            console.log('correcto')
+                        }
+                    },
+                    error: function (error){
+                    },
+                })
+            }
+        })
+    });
+
 </script>
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
