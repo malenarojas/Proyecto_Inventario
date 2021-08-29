@@ -15,8 +15,11 @@ class CreateVentaTable extends Migration
     {
         Schema::create('venta', function (Blueprint $table) {
             $table->id();
+            $table->float('total_USD');
+            $table->float('tipo_cambio');
+            $table->float('total_BO');
             $table->date('fecha');
-            $table->String('forma_de_pago',15);
+            $table->String('forma_pago',15);
             $table->unsignedBigInteger('personal_id');
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\producto;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\EstanteController;
@@ -145,6 +146,7 @@ Route::group(['prefix'=>'compra'],function (){
     Route::get('/eliminar_detalle/{id_compra}/{id_detalle}',[CompraController::class,'eliminar_detalle'])->name('compra.eliminar_detalle');
 });
 Route::group(['prefix'=>'cliente'],function (){
+    Route::get('/buscarcliente',[ClienteController::class,'buscarcliente'])->name('cliente.buscarcliente');
     Route::get('/',[ClienteController::class,'index'])->name('cliente.index');
     Route::post('/',[ClienteController::class,'store'])->name('cliente.store');
     Route::get('/create',[ClienteController::class,'create'])->name('cliente.create');
@@ -161,16 +163,14 @@ Route::group(['prefix'=>'venta'],function (){
     Route::put('/{id}',[VentaController::class,'update'])->name('venta.update');
     Route::get('/{id}/edit',[VentaController::class,'edit'])->name('venta.edit');
     Route::get('/{id}/destroy',[VentaController::class,'destroy'])->name('venta.destroy');
+    Route::get('/eliminar_detalle/{id_venta}/{id_detalle}',[VentaController::class,'eliminar_detalle'])->name('venta.eliminar_detalle');
 });
 
 Route::get('prueba',function (){
-   /* $precio_compra=62.64;
-    $porcentaje_ganacia=10.0;
-    $precio_venta=(($precio_compra*($porcentaje_ganacia/100))+$precio_compra);*/
-    $X=10;
-    $Z=5.68;
-    return $X*$Z;
 
+   $personal= \App\Models\personal::findOrFail(133);
+
+   return $personal->tipopersonal->cargo;
 });
 
 Auth::routes();

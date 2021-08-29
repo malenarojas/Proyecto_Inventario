@@ -9,6 +9,7 @@ class cliente extends Model
 {
     use HasFactory;
     protected $table='cliente';
+    protected $primaryKey = 'id_cliente';
     public function venta(){
         return $this->hasOne(venta::class,'cliente_id','id_cliente');
     }

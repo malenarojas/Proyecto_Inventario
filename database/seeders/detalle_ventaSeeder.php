@@ -14,6 +14,6 @@ class detalle_ventaSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cliente;
 use Illuminate\Http\Request;
+
 
 class ClienteController extends Controller
 {
@@ -69,7 +71,7 @@ class ClienteController extends Controller
     public function buscarcliente(Request $request)
     {
         $cliente_id=$request->input('id');
-        $cliente=Proveedor::where('id_cliente','=',$cliente_id)->get(['id_cliente','nombre']);
+        $cliente=Cliente::where('id_cliente','=',$cliente_id)->get(['id_cliente','nombre']);
         if($cliente->isEmpty()){
             return 0;
         }

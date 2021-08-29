@@ -31,4 +31,7 @@ class producto extends Model
     public function detallecompra(){
         return $this->hasMany(DetalleCompra::class,'producto_id','codigo');
     }
+    public function detalleventa(){
+        return $this->hasMany(DetalleVenta::class,'producto_id','codigo');
+    }
 }

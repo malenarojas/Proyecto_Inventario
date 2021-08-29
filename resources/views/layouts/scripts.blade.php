@@ -93,7 +93,7 @@
                     type: 'GET',
                     async: true,
                     data: {
-                        id: proveedor_id,
+                        id: cliente_id,
                         _token: $('input[name="_token"]').val()
                     },
                     success: function (response){

@@ -21,7 +21,7 @@ class CreateDetalleVentaTable extends Migration
             $table->float('precio_unitario');
             $table->float('subtotal_USD');
             $table->float('tipo_cambio');
-            $table->float('subtotal_BS');
+            $table->float('subtotal_BO');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('venta_id')->on('venta')->references('id')->onDelete('cascade');
