@@ -1,10 +1,13 @@
 <ul id="sidenav-left" class="sidenav">
-    <li><div class="user-view dark-primary-color">
-{{--            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>--}}
-            <a href="#name"><span class="white-text name">Malena Rojas Camargo</span></a>
-            <a href="#email"><span class="white-text email">malenarojas2021@gmail.com</span></a>
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="{{ asset('imgs/background.jpg') }}">
+            </div>
+            <a href="#user"><img class="circle center" src="{{ asset('imgs/profile.jpg') }}"></a>
+            <a href="#name"><span class="white-text name">{{ auth()->user()->personal->nombre }}</span></a>
+            <a href="#email"><span class="white-text email">{{ auth()->user()->email }}</span></a>
         </div>
-
     </li>
     <li><a class="subheader">Administración</a></li>
     <li><a class="waves-effect" href="{{route('producto.index')}}">Gestionar Producto<i class="material-icons">apps</i></a></li>

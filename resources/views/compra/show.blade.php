@@ -70,7 +70,7 @@
         </div>
         <div class="row" >
             <div class="col s8 m5 offset-sm-2">
-                <span>LISTA DE COMPRAS</span>
+                <span>LISTA DE DETALLE COMPRAS</span>
                 <table class="striped">
                     <thead>
                     <tr>
@@ -93,7 +93,7 @@
                             <td>{{$detalle->compra_id}}</td>
                             <td>{{$detalle->producto_id}}</td>
                             <td>{{$detalle->cantidad}}</td>
-                            <td>{{$detalle->precio_unitaro}}</td>
+                            <td>{{$detalle->precio_unitario}}</td>
                             <td>{{$detalle->subtotal_USD}}</td>
                             <td>{{$detalle->tipo_cambio}}</td>
                             <td>{{$detalle->subtotal_BO}}</td>

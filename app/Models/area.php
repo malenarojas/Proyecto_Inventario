@@ -9,7 +9,8 @@ class area extends Model
 {
     use HasFactory;
     protected $table='area';
+
     public function ubicacion(){
-        return $this->hasOne(ubicacion::class,'area_num','num_area');
+        return $this->hasOne(ubicacion::class,'area_id','id');
     }
 }

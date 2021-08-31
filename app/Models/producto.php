@@ -11,13 +11,13 @@ class producto extends Model
     use HasFactory;
     protected $table='producto';
     public function marca(){
-        return $this->belongsTo(marca::class,'id_marca','marca_id');
+        return $this->belongsTo(marca::class,'marca_id','id');
     }
     public function categoria(){
-        return $this->belongsTo(categoria::class,'id_categoria','categoria_id');
+        return $this->belongsTo(categoria::class,'categoria_id','id');
     }
     public function nacionalidad(){
-        return $this->belongsTo(personal::class,'id_nacionalidad','nacionalidad_id');
+        return $this->belongsTo(nacionalidad::class,'id_nacionalidad','nacionalidad_id');
     }
     public function ubicacion(){
         return $this->hasOne(ubicacion::class,'producto_codigo','codigo');

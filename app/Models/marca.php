@@ -10,6 +10,6 @@ class marca extends Model
     use HasFactory;
     protected $table='marca';
     public function producto(){
-        return $this->hasOne(producto::class,'marca_id','id_marca');
+        return $this->hasOne(producto::class,'marca_id','id');
     }
 }

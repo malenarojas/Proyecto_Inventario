@@ -1,6 +1,6 @@
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <!-- icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 

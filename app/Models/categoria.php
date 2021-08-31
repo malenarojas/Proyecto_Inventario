@@ -9,7 +9,8 @@ class categoria extends Model
 {
     use HasFactory;
     protected $table='categoria';
+
     public function producto(){
-        return $this->hasOne(producto::class,'categoria_id','id_categoria');
+        return $this->hasOne(producto::class,'categoria_id','id');
     }
 }
