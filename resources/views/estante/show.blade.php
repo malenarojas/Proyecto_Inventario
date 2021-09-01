@@ -2,7 +2,7 @@
 @section('titulo','index estante')
 @section('contenido')
     <div>
-        <span>Datos del estante</span>
+        <span class="titulo-index">DATOS DEL ESTANTE </span>
         <div>
             <p>I.D {{$estante->id}}</p>
             <p>Descripcion:{{$estante->descripcion}}</p>

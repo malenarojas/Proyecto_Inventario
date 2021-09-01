@@ -12,7 +12,7 @@ class User extends Authenticatable
     protected $table='users';
     use HasFactory, Notifiable;
     public function personal(){
-        return $this->belongsTo(personal::class,'id_personal','personal_id');
+        return $this->belongsTo(personal::class,'personal_id','id');
     }
     /**
      * The attributes that are mass assignable.

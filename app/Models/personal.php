@@ -13,6 +13,6 @@ class personal extends Model
         return $this->hasOne(users::class,'personal_id','id');
     }
     public function tipopersonal(){
-        return $this->belongsTo(tipopersonal::class,'id_tipopersonal','tipopersonal_id');
+        return $this->belongsTo(tipo_personal::class,'tipopersonal_id','id');
     }
 }

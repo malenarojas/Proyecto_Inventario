@@ -12,7 +12,10 @@ class venta extends Model
     public function cliente(){
         return $this->belongsTo(cliente::class,'id_cliente','cliente_id');
     }
-    public function productos(){
-        return $this->belongsToMany(producto::class);
+    public function personal(){
+        return $this->belongsTo(personal::class,'id_personal','id');
+    }
+    public function detalleventa(){
+        return $this->hasMany(DetalleCompra::class,'venta_id','id');
     }
 }

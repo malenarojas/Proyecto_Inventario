@@ -10,6 +10,6 @@ class estante extends Model
     use HasFactory;
     protected $table='estante';
     public function ubicacion(){
-        return $this->hasOne(ubicacion::class,'estante_num','num_estante');
+        return $this->hasOne(ubicacion::class,'estante_id','id');
     }
 }

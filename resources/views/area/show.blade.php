@@ -2,10 +2,10 @@
 @section('titulo','index area')
 @section('contenido')
     <div>
-        <span>Datos del Area</span>
+        <span class="titulo-index">DATOS DEL AREA</span>
         <div>
             <p>I.D {{$area->id}}</p>
-            <p>Descripcion:{{$area->descripcion}}</p>
+            <p>DESCRIPCION:{{$area->descripcion}}</p>
         </div>
     </div>
 @endsection

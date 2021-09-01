@@ -6110,12 +6110,12 @@
 										"$ref": "AAAAAAF6brKS1Uw1ec4="
 									},
 									"font": "Arial;13;0",
-									"left": 663,
-									"top": 133,
+									"left": 679,
+									"top": 136,
 									"width": 14.82177734375,
 									"height": 13,
-									"alpha": 0.5235987755982988,
-									"distance": 30,
+									"alpha": 1.0390726965541983,
+									"distance": 19.72308292331602,
 									"hostEdge": {
 										"$ref": "AAAAAAF6brKS1Uw4n5U="
 									},
@@ -6215,15 +6215,15 @@
 									},
 									"font": "Arial;13;0",
 									"left": 632,
-									"top": 106,
+									"top": 112,
 									"width": 7.22998046875,
 									"height": 13,
-									"alpha": 0.9652511431901138,
-									"distance": 15.811388300841896,
+									"alpha": 0.6610426303895212,
+									"distance": 11.40175425099138,
 									"hostEdge": {
 										"$ref": "AAAAAAF6brKS1Uw4n5U="
 									},
-									"text": "1"
+									"text": "*"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -8832,7 +8832,7 @@
 								"reference": {
 									"$ref": "AAAAAAF6RPxzyuVJ0W8="
 								},
-								"multiplicity": "1"
+								"multiplicity": "*"
 							}
 						},
 						{
@@ -65246,7 +65246,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF6/xGV5L6Zcws="
 							},
-							"name": "id_ubicacion"
+							"name": "id_ubicacion",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -65254,7 +65255,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF6/xGV5L6Zcws="
 							},
-							"name": "descripcion"
+							"name": "descripcion",
+							"type": ""
 						}
 					]
 				}
