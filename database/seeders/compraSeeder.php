@@ -14,6 +14,11 @@ class CompraSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
+        DB::table('proveedor')->truncate();
+        DB::table('proveedor')->insert(['nombre' => 'Renato Diesel lta','direccion'=>'2do anillo av.santos','telefono'=>'67983044','correo'=>'renato@gmail.com']);
+        DB::table('proveedor')->insert(['nombre' => 'diesel group','direccion'=>'avenid_proveedora grigota esq.','telefono'=>'68289044','correo'=>'diesel@gmail.com']);
+=======
        /* DB::table('proveedor')->truncate();
         DB::table('proveedor')->insert(['id_proveedor'=>'123','nombre' => 'Renato Diesel lta','direccion'=>'2do anillo av.santos','telefono'=>'67983044','correo'=>'renato@gmail.com']);
         DB::table('proveedor')->insert(['id_proveedor'=>'124','nombre' => 'diesel group','direccion'=>'avenida grigota esq.','telefono'=>'68289044','correo'=>'diesel@gmail.com']);
@@ -22,6 +27,7 @@ class CompraSeeder extends Seeder
         DB::table('proveedor')->truncate();
         DB::table('proveedor')->insert(['nombre' => 'Renato Diesel lta','direccion'=>'2do anillo av.santos','telefono'=>'67983044','correo'=>'renato@gmail.com']);
         DB::table('proveedor')->insert(['nombre' => 'diesel group','direccion'=>'avenida grigota esq.','telefono'=>'68289044','correo'=>'diesel@gmail.com']);
+>>>>>>> 541b572b90052cf7430d904d7528136cb268ed03
         DB::table('proveedor')->insert(['nombre' => 'Jhonny Chavez','direccion'=>'3er anillo','telefono'=>'77607963','correo'=>'jhonny@gmail.com']);
         DB::table('proveedor')->insert(['nombre' => 'Dippon Diesel','direccion'=>'av.omar chavez','telefono'=>'76392003','correo'=>'dippon@gmail.com']);
         DB::table('compra')->truncate();

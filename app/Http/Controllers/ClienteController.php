@@ -11,8 +11,8 @@ class ClienteController extends Controller
 
     public function index()
     {
-        $clientes=Cliente::all();
-        return view('cliente.index',['clientes'=>$clientes]);
+        $cliente=Cliente::all();
+        return view('cliente.index',['cliente'=>$cliente]);
 
     }
 
@@ -38,10 +38,10 @@ class ClienteController extends Controller
 
     public function show($id)
     {
-        $clientes =Cliente::findOrFail($id);
-        return view('cliente.show', ['clientes'=>$clientes]);
-    }
+        $cliente =Cliente::findOrFail($id);
+        return view('cliente.show', ['cliente'=>$cliente]);
 
+    }
     public function edit($id)
     {
         $cliente =Cliente::findOrFail($id);

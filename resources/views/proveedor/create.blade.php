@@ -1,47 +1,19 @@
 @extends('layouts.app')
-@section('titulo','create personal')
+@section('titulo','create proveedor')
 @section('contenido')
     <div class="row">
         <div class="col s12 m4">
         </div>
         <div class="col s12 m4 " >
-            <form  method="POST" action="{{route('personal.store')}}">
+            <form  method="POST" action="{{route('proveedor.store')}}">
                 @csrf
-                <span>REGISTRO DEL PERSONAL</span>
+                <span>REGISTRO DE PROVEEDOR</span>
                 <div>
 
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value="{{old('nombre')}}">
-                        @error('descripcion')
-                        <span>{{$message}}</span>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" id="apellido" name="apellido" value="{{old('apellido')}}">
-                        @error('apellido')
-                        <span>{{$message}}</span>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="CI">CI:</label>
-                        <input type="text" id="CI" name="CI" value="{{old('CI')}}">
-                        @error('CI')
-                        <span>{{$message}}</span>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="telefono">Telefono:</label>
-                        <input type="text" id="telefono" name="telefono" value="{{old('telefono')}}">
-                        @error('telefono')
-                        <span>{{$message}}</span>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="sexo">Sexo:</label>
-                        <input type="text" id="sexo" name="sexo" value="{{old('sexo')}}">
-                        @error('sexo')
+                        @error('nombre')
                         <span>{{$message}}</span>
                         @enderror
                     </div>
@@ -53,15 +25,23 @@
                         @enderror
                     </div>
                     <div>
-                        <label for="tipopersonal_id">Tipo personal :</label>
-                        <input type="text" id="tipopersonal_id" name="tipopersonal_id" value="{{old('tipopersonal_id')}}">
-                        @error('descripcion')
+                        <label for="telefono">Telefono:</label>
+                        <input type="text" id="telefono" name="telefono" value="{{old('telefono')}}">
+                        @error('telefono')
                         <span>{{$message}}</span>
                         @enderror
                     </div>
                     <div>
+                        <label for="correo">Correo:</label>
+                        <input type="text" id="correo" name="correo" value="{{old('correo')}}">
+                        @error('correo')
+                        <span>{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    <div>
                         <button type="submit">Guardar</button>
-                        <a href="{{route('personal.index')}}">Cancelar</a>
+                        <a href="{{route('proveedor.index')}}">Cancelar</a>
                     </div>
                 </div>
             </form>

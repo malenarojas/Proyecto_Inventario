@@ -11,6 +11,6 @@ class proveedor extends Model
     protected $table='proveedor';
     protected $primaryKey = 'id_proveedor';
     public function compra(){
-        return $this->hasOne(compra::class,'proveedor_id','id_proveedor');
+        return $this->hasOne(compra::class,'proveedor_id','id');
     }
 }
