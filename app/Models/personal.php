@@ -10,7 +10,7 @@ class personal extends Model
     use HasFactory;
     protected $table='personal';
     public function users(){
-        return $this->hasOne(users::class,'personal_id','id_personal');
+        return $this->hasOne(users::class,'personal_id','id');
     }
     public function tipopersonal(){
         return $this->belongsTo(tipopersonal::class,'id_tipopersonal','tipopersonal_id');

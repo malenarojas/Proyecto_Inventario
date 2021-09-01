@@ -10,7 +10,7 @@ class compra extends Model
     use HasFactory;
     protected $table='compra';
     public function proveedor(){
-        return $this->belongsTo(proveedor::class,'id_proveedor','proveedor_id');
+        return $this->belongsTo(proveedor::class,'proveedor_id','id');
     }
     public function personal(){
         return $this->belongsTo(personal::class,'id_personal','id');

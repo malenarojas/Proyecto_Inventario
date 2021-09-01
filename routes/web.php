@@ -176,3 +176,19 @@ Route::get('prueba',function (){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::group(['prefix'=>'users'],function (){
+    Route::get('/',[UserController::class,'index'])->name('users.index');
+    Route::post('/',[UserController::class,'store'])->name('users.store');
+    Route::get('/create',[UserController::class,'create'])->name('users.create');
+    Route::get('/{id}',[UserController::class,'show'])->name('users.show');
+    Route::put('/{id}',[UserController::class,'update'])->name('users.update');
+    Route::get('/{id}/edit',[UserController::class,'edit'])->name('users.edit');
+    Route::get('/{id}/destroy',[UserController::class,'destroy'])->name('users.destroy');
+});

@@ -28,7 +28,7 @@ class CompraController extends Controller
     {
         $compra =new Compra();
         $compra->proveedor_id=$request->input('proveedor_id');
-        //$compra->personal_id=auth()->user()->personal_id;
+        //$compra->personal_id=auth()->users()->personal_id;
         $compra->personal_id=133;
         $compra->total_USD=0.0;
         $compra->tipo_cambio=$request->input('tipo_cambio');

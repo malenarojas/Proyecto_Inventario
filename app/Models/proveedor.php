@@ -10,6 +10,6 @@ class proveedor extends Model
     use HasFactory;
     protected $table='proveedor';
     public function compra(){
-        return $this->hasOne(compra::class,'proveedor_id','id_proveedor');
+        return $this->hasOne(compra::class,'proveedor_id','id');
     }
 }

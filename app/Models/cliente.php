@@ -9,7 +9,12 @@ class cliente extends Model
 {
     use HasFactory;
     protected $table='cliente';
+    /**
+     * @var mixed
+     */
+
     public function venta(){
-        return $this->hasOne(venta::class,'cliente_id','id_cliente');
+        return $this->hasOne(venta::class,'cliente_id','id');
     }
+
 }

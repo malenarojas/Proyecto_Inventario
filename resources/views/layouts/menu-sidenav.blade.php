@@ -1,6 +1,6 @@
 <ul id="sidenav-left" class="sidenav">
     <li><div class="user-view dark-primary-color">
-{{--            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>--}}
+{{--            <a href="#users"><img class="circle" src="images/yuna.jpg"></a>--}}
             <a href="#name"><span class="white-text name">Malena Rojas Camargo</span></a>
             <a href="#email"><span class="white-text email">malenarojas2021@gmail.com</span></a>
         </div>
