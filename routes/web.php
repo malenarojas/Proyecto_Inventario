@@ -117,13 +117,13 @@ Route::group(['prefix'=>'personal'],function (){
     Route::get('/{id}/destroy',[PersonalController::class,'destroy'])->name('personal.destroy');
 });
 Route::group(['prefix'=>'User'],function (){
-    Route::get('/',[UserController::class,'index'])->name('User.index');
-    Route::post('/',[UserController::class,'store'])->name('User.store');
-    Route::get('/create',[UserController::class,'create'])->name('User.create');
-    Route::get('/{id}',[UserController::class,'show'])->name('User.show');
-    Route::put('/{id}',[UserController::class,'update'])->name('User.update');
-    Route::get('/{id}/edit',[UserController::class,'edit'])->name('User.edit');
-    Route::get('/{id}/destroy',[UserController::class,'destroy'])->name('User.destroy');
+    Route::get('/',[UserController::class,'index'])->name('user.index');
+    Route::post('/',[UserController::class,'store'])->name('user.store');
+    Route::get('/create',[UserController::class,'create'])->name('user.create');
+    Route::get('/{id}',[UserController::class,'show'])->name('user.show');
+    Route::put('/{id}',[UserController::class,'update'])->name('user.update');
+    Route::get('/{id}/edit',[UserController::class,'edit'])->name('user.edit');
+    Route::get('/{id}/destroy',[UserController::class,'destroy'])->name('user.destroy');
 });
 Route::group(['prefix'=>'proveedor'],function (){
     Route::get('/buscarproveedor',[ProveedorController::class,'buscarproveedor'])->name('proveedor.buscarproveedor');

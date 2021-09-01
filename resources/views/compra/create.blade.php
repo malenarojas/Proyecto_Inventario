@@ -4,13 +4,13 @@
     <div class="row">
         <div class="col s12 m4">
         </div>
-        <div class="col s12 m4 " >
+        <div class="col s12 m6 offset-m3 " >
             <form  method="POST" action="{{route('compra.store')}}">
                 @csrf
-                <span>REGISTRO DE COMPRA</span>
+                <span class="titulo-index">REGISTRO DE COMPRA</span>
                 <div>
                     <label for="tipo_cambio">tipo cambio:</label>
-                    <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="{{old('tipo_cambio')}}">
+                    <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="6.96">
                     @error('tipo_cambio')
                     <span>{{$message}}</span>
                     @enderror
@@ -29,9 +29,14 @@
                             <input type="text" name="nombre_proveedor" id="nombre_proveedor" disabled>
                         </div>
                     </div>
-                    <div>
-                        <button type="submit">Guardar</button>
-                        <a href="{{route('compra.index')}}">Cancelar</a>
+                    <div class="row">
+                        <div class="col s6 center">
+                            <button type="submit" class="btn">Guardar</button>
+                        </div>
+                        <div  class="col s6 center">
+                            <a href="{{route('compra.index')}}" class="btn">Cancelar</a>
+                        </div>
+
                     </div>
                 </div>
             </form>

@@ -117,13 +117,12 @@
                             <button class="btn" type="submit">Guardar</button>
                         </div>
                         <div class="col s6 center">
-                            <a href="{{route('producto.index')}}">Cancelar</a>
+                            <a href="{{route('producto.index')}}" class="btn">Cancelar</a>
                         </div>
                     </div>
 
                 </div>
             </form>
-
         </div>
         <div class="col s12 m4">
         </div>
