@@ -126,6 +126,9 @@
         var elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems, {});
 
+        var elems = document.querySelectorAll('.collapsible');
+        var instances = M.Collapsible.init(elems, {});
+
         var elemDate = document.querySelectorAll('.datepicker');
         M.Datepicker.init(elemDate, {
             format: 'yyyy-mm-dd'

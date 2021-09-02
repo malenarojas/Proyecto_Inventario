@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('contenido')
     <div class="row" style="padding: 40px">
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card align-content-center" >
                 <div class="card-image center">
                     <i class="material-icons" style="font-size: 100px;  align-items: center " >shopping_cart</i>
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons" style="font-size: 100px;  align-items: center ">person</i>
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons" style="font-size: 100px;  align-items: center ">add_shopping_cart</i>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                   <i class="material-icons"style="font-size: 100px;  align-items: center ">people</i>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons"style="font-size: 100px;  align-items: center ">people</i>
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons"style="font-size: 100px;  align-items: center ">construction</i>
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons"style="font-size: 100px;  align-items: center ">pin_drop</i>
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m3">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-image center">
                     <i class="material-icons"style="font-size: 100px;  align-items: center ">admin_panel_settings</i>
