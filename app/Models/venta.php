@@ -10,10 +10,10 @@ class venta extends Model
     use HasFactory;
     protected $table='venta';
     public function cliente(){
-        return $this->belongsTo(cliente::class,'id_cliente','cliente_id');
+        return $this->belongsTo(cliente::class,'cliente_id','id');
     }
     public function personal(){
-        return $this->belongsTo(personal::class,'id_personal','id');
+        return $this->belongsTo(personal::class,'personal_id','id');
     }
     public function detalleventa(){
         return $this->hasMany(DetalleCompra::class,'venta_id','id');

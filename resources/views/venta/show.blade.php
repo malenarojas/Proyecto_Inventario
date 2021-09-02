@@ -2,26 +2,32 @@
 @section('titulo','index venta')
 @section('contenido')
     <div class="row">
-        <div class=" card col s4">
-            <span>Datos de las ventas</span>
-            <div>
-                <p> id {{$venta->id}}</p>
-                <p>total USD {{$venta->total_USD}}</p>
-                <p>tipo cambio {{$venta->tipo_cambio}}</p>
-                <p>total BO {{$venta->total_BO}}</p>
-                <p>fecha {{$venta->fecha}}</p>
-                <p>forma de pago:{{$venta->forma_pago}}</p>
-                <p>personal id {{$venta->personal_id}}</p>
-                <p>cliente id {{$venta->cliente_id}}</p>
+        <div class=" card col s5">
+            <span class="titulo-index">DATOS DE LA VENTA</span>
+            <div class="row">
             </div>
+            <div class="row">
+                <div class="col s12 container">
+                    <p> id {{$venta->id}}</p>
+                    <p>total USD {{$venta->total_USD.' $'}}</p>
+                    <p>tipo cambio {{$venta->tipo_cambio}}</p>
+                    <p>total BO {{$venta->total_BO.' Bs'}}</p>
+                    <p>fecha {{$venta->fecha}}</p>
+                    <p>forma de pago:{{$venta->forma_pago}}</p>
+                    <p>personal {{$venta->personal->nombre}}</p>
+                    <p>cliente {{$venta->cliente->nombre}}</p>
+
+                </div>
+            </div>
+            <div class="row"></div>
         </div>
-        <div class="card col s8">
+        <div class="card col s7">
             <div class="row">
                 <div class="col s12 m12 "  >
                     <form  method="POST" action="{{route('venta.update',[$venta->id])}}">
                         @csrf
                         @method('PUT')
-                        <span>REGISTRO DE DETALLE VENTA</span>
+                        <span class="titulo-index">REGISTRO DE DETALLE VENTA</span>
                         <div>
                             <label for="cantidad">Cantidad:</label>
                             <input type="number" id="cantidad" name="cantidad" value="{{old('cantidad')}}">
@@ -31,7 +37,7 @@
                         </div>
                         <div>
                             <label for="tipo_cambio">Tipo Cambio:</label>
-                            <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="{{old('tipo_cambio')}}">
+                            <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="6.96">
                             @error('tipo_cambio')
                             <span>{{$message}}</span>
                             @enderror
@@ -58,57 +64,50 @@
                         </div>
                         <div>
                             <div>
-                                <button type="submit">Guardar</button>
-                                <a href="{{route('venta.index')}}">Cancelar</a>
+                                <button type="submit" class="btn-small">Guardar</button>
+                                <a href="{{route('venta.index')}}" class="btn-small">Cancelar</a>
                             </div>
                         </div>
                     </form>
-
                 </div>
                 <div class="col s12 m4">
                 </div>
             </div>
         </div>
-        <div class="row" >
-            <div class="col s8 m5 offset-sm-2">
-                <span>LISTA DE DETALLE VENTAS</span>
-                <table class="striped">
-                    <thead>
+    </div>
+    <div class="row card" >
+        <div class="col s12">
+            <span class="titulo-index">LISTA DE DETALLE VENTAS</span>
+            <table class="table-centered">
+                <thead>
+                <tr>
+                    <th>venta id</th>
+                    <th>producto id</th>
+                    <th>cantidad</th>
+                    <th>precio_unitario</th>
+                    <th>subtotal_USD</th>
+                    <th>tipo cambio</th>
+                    <th>subtotal_BO</th>
+                    <th>ACCIONES</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($detalleventas as $detalle)
                     <tr>
-                        <td>id </td>
-                        <td>venta id</td>
-                        <td>producto id</td>
-                        <td>nombre producto</td>
-                        <td>cantidad</td>
-                        <td>precio_unitario</td>
-                        <td>subtotal_USD</td>
-                        <td>tipo cambio</td>
-                        <td>subtotal_BO</td>
-                        <td>ACCIONES</td>
+                        <td>{{$detalle->venta_id}}</td>
+                        <td>{{$detalle->producto_id}}</td>
+                        <td>{{$detalle->cantidad}}</td>
+                        <td>{{$detalle->precio_unitario}}</td>
+                        <td>{{$detalle->subtotal_USD}}</td>
+                        <td>{{$detalle->tipo_cambio}}</td>
+                        <td>{{$detalle->subtotal_BO}}</td>
+                        <td>
+                            <a href="{{route('venta.eliminar_detalle',[$venta->id,$detalle->id])}}" class="btn-small red">destroy</a>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($detalleventas as $detalle)
-                        <tr>
-                            <td>{{$detalle->id}}</td>
-                            <td>{{$detalle->venta_id}}</td>
-                            <td>{{$detalle->producto_id}}</td>
-                            <td>{{$detalle->producto->nombre}}</td>
-                            <td>{{$detalle->cantidad}}</td>
-                            <td>{{$detalle->precio_unitaro}}</td>
-                            <td>{{$detalle->subtotal_USD}}</td>
-                            <td>{{$detalle->tipo_cambio}}</td>
-                            <td>{{$detalle->subtotal_BO}}</td>
-                            <td>
-                                <a href="{{route('venta.eliminar_detalle',[$venta->id,$detalle->id])}}">destroy</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-
-            </div>
-
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 

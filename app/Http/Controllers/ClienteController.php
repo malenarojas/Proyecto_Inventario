@@ -71,7 +71,7 @@ class ClienteController extends Controller
     public function buscarcliente(Request $request)
     {
         $cliente_id=$request->input('id');
-        $cliente=Cliente::where('id_cliente','=',$cliente_id)->get(['id_cliente','nombre']);
+        $cliente=Cliente::where('id','=',$cliente_id)->get(['id','nombre']);
         if($cliente->isEmpty()){
             return 0;
         }

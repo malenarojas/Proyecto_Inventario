@@ -68,8 +68,8 @@
                             var datas = JSON.parse(response);
                             datas.forEach(data => {
                                 $('#nombre_proveedor').val(data.nombre);
-                                $('#proveedor_id').val(data.id_proveedor);
-                                console.log($('#proveedor_id').val(data.id_proveedor));
+                                $('#proveedor_id').val(data.id);
+                                console.log($('#proveedor_id').val(data.id));
                             })
                             console.log('correcto')
                         }
@@ -104,8 +104,8 @@
                             var datas = JSON.parse(response);
                             datas.forEach(data => {
                                 $('#nombre_cliente').val(data.nombre);
-                                $('#cliente_id').val(data.id_cliente);
-                                console.log($('#cliente_id').val(data.id_cliente));
+                                $('#cliente_id').val(data.id);
+                                console.log($('#cliente_id').val(data.id));
                             })
                             console.log('correcto')
                         }

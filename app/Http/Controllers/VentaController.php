@@ -92,7 +92,9 @@ class VentaController extends Controller
 
     public function destroy($id)
     {
-
+        $venta=Venta::findOrFail($id);
+        $venta->delete();
+        return redirect()->route('venta.index');
 
     }
     public function eliminar_detalle($id_venta,$id_detalle)

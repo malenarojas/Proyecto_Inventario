@@ -13,7 +13,7 @@ class compra extends Model
         return $this->belongsTo(proveedor::class,'proveedor_id','id');
     }
     public function personal(){
-        return $this->belongsTo(personal::class,'id_personal','id');
+        return $this->belongsTo(personal::class,'personal_id','id');
     }
     public function detallecompra(){
         return $this->hasMany(DetalleCompra::class,'compra_id','id');

@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <a href="{{ route('producto.create') }}" class="btn btn-large">Registrate</a>
+                <a href="{{ route('producto.create') }}" class="btn btn-large dark-primary-color">Registrar</a>
             </div>
         </div>
         <div class="row card">
@@ -59,7 +59,7 @@
                             <td>{{$producto->nacionalidad_id}}</td>
                             <td>{{$producto->marca->descripcion}}</td>
                             <td>
-                                <a href="{{route('producto.show', $producto->codigo)}}" class="btn-small">show</a>
+                                <a href="{{route('producto.show', $producto->codigo)}}" class="btn-small dark-primary-color">show</a>
                                 <a href="{{route('producto.edit',$producto->codigo)}}" class="btn-small orange">edit</a>
                                 <a href="{{route('producto.destroy',$producto->codigo)}}" class="btn-small red">destroy</a>
                             </td>

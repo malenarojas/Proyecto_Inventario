@@ -1,11 +1,20 @@
 @extends('layouts.app')
 @section('titulo','index categoria')
 @section('contenido')
-    <div>
-        <span>Datos de las categorias</span>
-        <div>
-            <p>I.D {{$categoria->id}}</p>
-            <p>Descripcion:{{$categoria->descripcion}}</p>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card">
+                <div class="card-content">
+                    <span class="titulo-index">Datos de las categoria</span>
+                    <div class="row">
+                        <div class="col m5 " ><p class="p-titulo" > ID:</p></div>
+                        <div class="col m7 "><p class="p-contenido">{{$categoria->id}}</p></div>
+                        <div class="col m5 " ><p class="p-titulo" > DESCRIPCION:</p></div>
+                        <div class="col m7 "><p class="p-contenido">{{$categoria->descripcion}}</p></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 @endsection

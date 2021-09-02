@@ -9,7 +9,6 @@
                 @csrf
                 <span>REGISTRO DEL CLIENTE</span>
                 <div>
-
                     <div>
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" value="{{old('nombre')}}">
@@ -38,7 +37,6 @@
                         <span>{{$message}}</span>
                         @enderror
                     </div>
-
                     <div>
                         <button type="submit">Guardar</button>
                         <a href="{{route('cliente.index')}}">Cancelar</a>

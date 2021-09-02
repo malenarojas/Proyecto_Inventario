@@ -37,8 +37,8 @@ class ProveedorController extends Controller
 
     public function show($id)
     {
-        $proveedores =Proveedor::findOrFail($id);
-        return view('proveedor.show', ['proveedores'=>$proveedores]);
+        $proveedor =Proveedor::findOrFail($id);
+        return view('proveedor.show', ['proveedor'=>$proveedor]);
     }
 
 
@@ -72,7 +72,7 @@ class ProveedorController extends Controller
     public function buscarproveedor(Request $request)
     {
         $proveedor_id=$request->input('id');
-        $proveedor=Proveedor::where('id_proveedor','=',$proveedor_id)->get(['id_proveedor','nombre']);
+        $proveedor=Proveedor::where('id','=',$proveedor_id)->get(['id','nombre']);
         if($proveedor->isEmpty()){
             return 0;
         }
