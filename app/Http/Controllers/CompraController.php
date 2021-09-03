@@ -28,10 +28,10 @@ class CompraController extends Controller
     public function store(Request $request)
     {
         $compra =new Compra();
-        $compra->id=$request->input('proveedor_id');
+        $compra->proveedor_id=$request->input('proveedor_id');
         //$compra->personal_id=auth()->users()->personal_id;
-        $compra->personal_id=133;
-        $compra->personal_id=auth()->user()->personal_id;
+        $compra->personal_id=1;
+        //$compra->personal_id=auth()->user()->personal_id;
         $compra->total_USD=0.0;
         $compra->tipo_cambio=$request->input('tipo_cambio');
         $compra->total_BO=0.0;

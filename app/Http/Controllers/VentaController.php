@@ -29,7 +29,7 @@ class VentaController extends Controller
         $venta =new Venta();
         $venta->cliente_id=$request->input('cliente_id');
         //$venta->personal_id=auth()->user()->personal_id;
-        $venta->personal_id=133;
+        $venta->personal_id=1;
         $venta->total_USD=0.0;
         $venta->tipo_cambio=$request->input('tipo_cambio');
         $venta->total_BO=0.0;
