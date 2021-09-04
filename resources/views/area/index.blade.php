@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <a  href="{{route('area.create')}}" class="btn btn-large">REGISTRAR</a>
+                <a  href="{{route('area.create')}}" class=" waves-effect waves-light btn-large dark-primary-color">REGISTRAR</a>
             </div>
         </div>
         <div class="row card">
@@ -31,7 +31,7 @@
                             <td>{{$area->id}}</td>
                             <td>{{$area->descripcion}}</td>
                             <td>
-                                <a  href="{{route('area.show', $area->id)}}" class="btn-small ">show</a>
+                                <a  href="{{route('area.show', $area->id)}}" class="btn-small dark-primary-color ">show</a>
                                 <a  href="{{route('area.edit',$area->id)}}" class="btn-small orange">edit</a>
                                 <a  href="{{route('area.destroy',$area->id)}}" class="btn-small red">destroy</a>
                             </td>

@@ -47,7 +47,7 @@ class PersonalController extends Controller
     public function edit($id)
     {
         $personal =Personal::findOrFail($id);
-        return view('personal.edit',['personal '=>$personal]);
+        return view('personal.edit',['personal'=>$personal]);
     }
 
 

@@ -2,34 +2,50 @@
 @section('titulo','index marca')
 @section('contenido')
     <div class="row" >
-        <div class="col s12 m5">
-            <a href="{{route('marca.create')}}">Registrate</a>
-            <span>LISTA DE LAS MARCAS</span>
-            <table class="striped">
-                <thead>
-                <tr>
-                    <td>id marca</td>
-                    <td>Descripcion</td>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($marcas as $marca)
+        <div class="row">
+            <div class="divider"></div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <span class="titulo-index">LISTA DE LAS MARCAS</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <a href="{{route('marca.create')}}" class=" waves-effect waves-light btn-large dark-primary-color">Registrate</a>
+            </div>
+        </div>
+        <div class="row card">
+            <div class="col s12">
+                <table class="table centered">
+                    <thead>
                     <tr>
-                        <td>{{$marca->id}}</td>
-                        <td>{{$marca->descripcion}}</td>
-                        <td>
-                            <a href="{{route('marca.show', $marca->id)}}">show</a>
-                            <a href="{{route('marca.edit',$marca->id)}}">edit</a>
-                            <a href="{{route('marca.destroy',$marca->id)}}">destroy</a>
-                        </td>
-
+                        <th>ID MARCA</th>
+                        <th>DESCRIPCION</th>
+                        <th>ACCIONES</th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($marcas as $marca)
+                        <tr>
+                            <td>{{$marca->id}}</td>
+                            <td>{{$marca->descripcion}}</td>
+                            <td>
+                                <a href="{{route('marca.show', $marca->id)}}" class=" btn-small dark-primary-color ">show</a>
+                                <a href="{{route('marca.edit',$marca->id)}}" class="btn-small orange">edit</a>
+                                <a href="{{route('marca.destroy',$marca->id)}}"  class="btn-small red">destroy</a>
+                            </td>
 
-                @endforeach
-                </tbody>
-            </table>
+                        </tr>
+
+                    @endforeach
+                    </tbody>
+                </table>
+
+            </div>
 
         </div>
+
 
     </div>
 @endsection

@@ -29,49 +29,49 @@ class UserController extends Controller
         //     'email' => 'required|email|unique:users',
         //     'password' => 'required'
         // ]);
-        $user = User::create($request->only('name', 'username', 'email', 'personal_id')
-            + [
-                'password' => bcrypt($request->input('password')),
-            ]);
-
-        $roles = $request->input('roles', []);
-        $user->syncRoles($roles);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario creado correctamente');
-
+        $users =new User();
+        $users->name=$request->input('name');
+        $users->email=$request->input('email');
+        $users->password=$request->input('password');
+        $users->personal_id=$request->input('personal_id');
+        $users->created_at= now();
+        $users->updated_at= now();
+        $users->save();
+        return redirect()->route('users.index');
     }
 
     public function show($id)
     {
-        $cliente = Cliente::findOrFail($id);
-        return view('cliente.show', ['cliente' => $cliente]);
+        $users = User::findOrFail($id);
+        return view('users.show', ['users' => $users]);
 
     }
 
     public function edit($id)
     {
-        $cliente = Cliente::findOrFail($id);
-        return view('cliente.edit', ['cliente' => $cliente]);
+        $users = User::findOrFail($id);
+        return view('users.edit', ['users' => $users]);
     }
 
 
     public function update(Request $request, $id)
     {
-        $cliente = Cliente::findOrFail($id);
-        $cliente->nombre = $request->input('nombre');
-        $cliente->direccion = $request->input('direccion');
-        $cliente->telefono = $request->input('telefono');
-        $cliente->correo = $request->input('correo');
-        $cliente->updated_at = now();
-        $cliente->save();
-        return redirect()->route('cliente.index');
+        $users = User::findOrFail($id);
+        $users->name=$request->input('name');
+        $users->email=$request->input('email');
+        $users->password=$request->input('password');
+        $users->personal_id=$request->input('personal_id');
+        $users->updated_at = now();
+        $users->save();
+        rusersedirect()->route('users.index');
     }
 
 
     public function destroy($id)
     {
-        $cliente = Cliente::findOrFail($id);
-        $cliente->delete();
-        return redirect()->route('cliente.index');
+        $users = User::findOrFail($id);
+        $users->delete();
+        return redirect()->route('users.index');
     }
 
     public function buscarcliente(Request $request)

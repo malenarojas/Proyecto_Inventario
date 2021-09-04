@@ -1,14 +1,15 @@
 
         @extends('layouts.app')
-        @section('titulo','users proveedor')
+        @section('titulo','users users')
         @section('contenido')
             <div class="row">
                 <div class="col s12 m4">
                 </div>
                 <div class="col s12 m4 " >
+                    <div class="row card" style="padding: 20px; vertical-align: center">
                     <form  method="POST" action="{{route('users.store')}}">
                         @csrf
-                        <span>REGISTRO DE USUARIOS</span>
+                        <span class="titulo-index">REGISTRO DE USUARIOS</span>
                         <div>
 
                             <div>
@@ -32,15 +33,27 @@
                                 <span>{{$message}}</span>
                                 @enderror
                             </div>
-
                             <div>
-                                <button type="submit">Guardar</button>
-                                <a href="{{route('users.index')}}">Cancelar</a>
+                                <label for="personal_id">Id personal:</label>
+                                <input type="text" id="personal_id" name="personal_id" value="{{old('personal_id')}}">
+                                @error('personal_id')
+                                <span>{{$message}}</span>
+                                @enderror
+                            </div>
+
+                            <div class="row">
+                                <div class="col s6 center">
+                                    <button class="btn" type="submit">Guardar</button>
+                                </div >
+                                <div class="col s3 center">
+                                    <a class="btn" href="{{route('users.index')}}">Cancelar</a>
+                                </div>
                             </div>
                         </div>
                     </form>
 
                 </div>
+
                 <div class="col s12 m4">
                 </div>
             </div>

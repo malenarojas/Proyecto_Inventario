@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('titulo','index compra')
 @section('contenido')
-    <div class="row" >
+    <div class="row " >
         <div class="row">
             <div class="divider"></div>
         </div>
@@ -10,12 +10,14 @@
                 <span class="titulo-index">LISTA DE COMPRAS</span>
             </div>
         </div>
+
         <div class="row">
             <div class="col s12">
-                <a href="{{route('compra.create')}}" class="btn btn-large">Registrate</a>
+                <a href="{{route('compra.create')}}" class="waves-effect waves-light btn-large dark-primary-color">Registrar</a>
             </div>
         </div>
-        <div class=" row card">
+
+        <div class=" row card" style="padding: 20px; vertical-align: center">
             <div class="col s12 ">
                 <table class="table centeder">
                     <thead>
@@ -27,6 +29,7 @@
                         <th>FECHA</th>
                         <th>PERSONAL</th>
                         <th>PROVEEDOR</th>
+                        <th>ACCIONES</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,7 +43,7 @@
                             <td>{{$compra->personal->nombre}}</td>
                             <td>{{$compra->proveedor->nombre}}</td>
                             <td>
-                                <a href="{{route('compra.show',$compra->id)}}" class="btn-small">show</a>
+                                <a href="{{route('compra.show',$compra->id)}}" class="btn-small dark-primary-color">show</a>
                                 <a href="{{route('compra.destroy',$compra->id)}}" class="btn-small red">destroy</a>
                             </td>
                         </tr>

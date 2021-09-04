@@ -2,6 +2,12 @@
 @section('titulo','index estante')
 @section('contenido')
     <div class="row">
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
         <div class="col s12 m6 offset-m3">
             <div class="card">
                 <div class="card-content">

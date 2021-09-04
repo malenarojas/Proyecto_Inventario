@@ -20,10 +20,27 @@
 
 .divider-color         { border-color: #BDBDBD !important; }
 .button-accent-color { background: #d50000 !important; }
+body{
 
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("http://127.0.0.1:8000/storage/tractor.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-
-
+body:before{
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #52c4df, #ad55c1);
+    opacity: 0.55%;
+}
 
 /* label color */
 .input-field label {
@@ -111,6 +128,8 @@
     background-color: #7C4DFF !important;
 }
 
+
+
 .titulo-index {
     font-size: 35px;
 }
@@ -130,3 +149,4 @@
     font-family: 'arial', serif ;
     font-size: 20px;
 }
+

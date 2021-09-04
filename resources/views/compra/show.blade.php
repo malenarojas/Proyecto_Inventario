@@ -2,7 +2,7 @@
 @section('titulo','index compra')
 @section('contenido')
     <div class="row">
-        <div class=" card col s5">
+        <div class=" card col s5 " style="padding: 20px; vertical-align: center" >
             <span class="titulo-index">DATOS DE LA COMPRA</span>
             <div class="row">
                 <div class="row">
@@ -22,7 +22,7 @@
            <div class="row"></div>
            <div class="row"></div>
         </div>
-        <div class="card col s7">
+        <div class="card col s7" style="padding: 20px; vertical-align: center">
             <div class="row">
                 <div class="col s12 m12 "  >
                     <form  method="POST" action="{{route('compra.update',[$compra->id])}}">
@@ -63,14 +63,14 @@
                                 @enderror
                             </div>
                         </div>
-                            <div class="col s12">
-                                <div class="col s3 m3">
-                                    <button type="submit" class="btn-small">Guardar</button>
-                                </div>
-                                <div class="col s3 m3">
-                                    <a href="{{route('compra.index')}}" class="btn-small">Cancelar</a>
-                                </div>
+                        <div class="col s12">
+                            <div class="col s12 m3 offset-m4">
+                                <button type="submit" class="btn-small">Guardar</button>
                             </div>
+                            <div class="col s12 m3">
+                                <a href="{{route('compra.index')}}" class="btn-small">Cancelar</a>
+                            </div>
+                        </div>
                     </form>
 
                 </div>
@@ -80,7 +80,7 @@
         </div>
 
     </div>
-    <div class="row card" >
+    <div class="row card" style="padding: 10px; vertical-align: center" >
         <div class="col s12">
             <span class="titulo-index">LISTA DE DETALLE COMPRAS</span>
             <table class="table centered">

@@ -7,14 +7,13 @@
         <div class="col s12">&nbsp;</div>
         <div class="col s12">&nbsp;</div>
         <div class="col s12">&nbsp;</div>
-        <div class="col s12">&nbsp;</div>
         <div class="col s12 m4">
         </div>
         <div class="col s12 m6 offset-m3 " >
-            <div class="row card">
+            <div class="row card" style="padding: 20px; vertical-align: center">
                 <form  method="POST" action="{{route('venta.store')}}">
                     @csrf
-                    <span class="titulo-index">REGISTRO DE VENTA</span>
+                    <span class="titulo-index ">REGISTRO DE VENTA</span>
                     <div col s12 m6>
                         <label for="tipo_cambio">tipo cambio:</label>
                         <input type="number" id="tipo_cambio" name="tipo_cambio" step="any" value="6.96">

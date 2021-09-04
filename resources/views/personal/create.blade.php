@@ -2,12 +2,12 @@
 @section('titulo','create personal')
 @section('contenido')
     <div class="row">
-        <div class="col s12 m4">
-        </div>
-        <div class="col s12 m4 " >
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12 m6 offset-m3 " >
+        <div class="row card" style="padding: 20px; vertical-align: center">
             <form  method="POST" action="{{route('personal.store')}}">
                 @csrf
-                <span>REGISTRO DEL PERSONAL</span>
+                <span class="titulo-index">REGISTRO DEL PERSONAL</span>
                 <div>
 
                     <div>
@@ -59,9 +59,13 @@
                         <span>{{$message}}</span>
                         @enderror
                     </div>
-                    <div>
-                        <button type="submit">Guardar</button>
-                        <a href="{{route('personal.index')}}">Cancelar</a>
+                    <div class="row">
+                        <div class="col s6 center">
+                            <button class="btn" type="submit">Guardar</button>
+                        </div>
+                        <div class="col s6 center">
+                            <a  class="btn" href="{{route('personal.index')}}">Cancelar</a>
+                        </div>
                     </div>
                 </div>
             </form>

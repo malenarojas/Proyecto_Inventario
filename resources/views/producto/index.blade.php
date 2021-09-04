@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <a href="{{ route('producto.create') }}" class="btn btn-large dark-primary-color">Registrar</a>
+                <a href="{{ route('producto.create') }}"class=" waves-effect waves-light btn-large dark-primary-color">Registrar</a>
             </div>
         </div>
         <div class="row card">

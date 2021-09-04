@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <a href="{{route('proveedor.create')}}" class="btn btn-large dark-primary-color">Registrate</a>
+                <a href="{{route('proveedor.create')}}" class=" waves-effect waves-light btn-large dark-primary-color">Registrate</a>
             </div>
         </div>
         <div class="row card">

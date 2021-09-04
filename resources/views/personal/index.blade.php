@@ -12,10 +12,10 @@
         </div>
         <div class="row">
             <div class="col s12">
-                <a class="btn btn-large dark-primary-color-text" href="{{route('personal.create')}}" role="button">REGISTRAR</a>
+                <a class=" waves-effect waves-light btn-large dark-primary-color" href="{{route('personal.create')}}" role="button">REGISTRAR</a>
             </div>
         </div>
-        <div class="row card">
+        <div class="row card" style="padding: 30px; vertical-align: center">
             <div col s12>
                 <table class="tablecenteder">
                     <thead>
@@ -45,9 +45,9 @@
                             <td>{{$personal->direccion}}</td>
                             <td>{{$personal->tipopersonal->cargo}}</td>
                             <td>
-                                <a CLASS="btn btn-outline-info" href="{{route('personal.show', $personal->id)}}">show</a>
-                                <a  class="btn btn-outline-secondary" href="{{route('personal.edit',$personal->id)}}">edit</a>
-                                <a  class="btn btn-outline-danger" href="{{route('personal.destroy',$personal->id)}}">destroy</a>
+                                <a class=" btn-small dark-primary-color " href="{{route('personal.show', $personal->id)}}">show</a>
+                                <a  class="btn-small orange" href="{{route('personal.edit',$personal->id)}}">edit</a>
+                                <a  class="btn-small red" href="{{route('personal.destroy',$personal->id)}}">destroy</a>
                             </td>
                         </tr>
                     @endforeach

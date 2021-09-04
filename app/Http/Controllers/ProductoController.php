@@ -102,10 +102,8 @@ class ProductoController extends Controller
     public function update(Request $request, $codigo)
     {
         $productos =Producto::where('codigo','=',$codigo)->get();
-        foreach ($productos as $n) {
-            $producto=$n;
-        }
-        $codigo=$request->input('codigo');
+        foreach ($productos as $n) $producto=$n;
+        //$codigo=$request->input('codigo');
         $nombre=$request->input('nombre');
         $descripcion_tecnica=$request->input('descripcion_tecnica');
         $medida=$request->input('medida');
@@ -142,6 +140,7 @@ class ProductoController extends Controller
                 'marca_id'=>$marca_id,
                 'updated_at'=>$updated_at
             ]);
+        return redirect()->route('producto.index');
 
     }
 

@@ -2,12 +2,17 @@
 @section('titulo','create nacionalidad')
 @section('contenido')
     <div class="row">
-        <div class="col s12 m4">
-        </div>
-        <div class="col s12 m4 " >
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12">&nbsp;</div>
+        <div class="col s12 m6 offset-m3 " >
+            <div>  <div class="row card" style="padding: 20px; vertical-align: center">
             <form  method="POST" action="{{route('nacionalidad.store')}}">
                 @csrf
-                <span>REGISTRO DE NACIONALIDAD</span>
+                <span class="titulo-index">REGISTRO DE NACIONALIDAD</span>
                 <div>
                     <div>
                         <label for="id_nacionalidad">id nacionalidad:</label>
@@ -23,14 +28,17 @@
                         <span>{{$message}}</span>
                         @enderror
                     </div>
-                    <div>
-                        <button type="submit">Guardar</button>
-                        <a href="{{route('nacionalidad.index')}}">Cancelar</a>
-                    </div>
+                    <div class="row">
+                        <div class="col s6 center">
+                            <button class="btn" type="submit">Guardar</button>
+                        </div>
+                        <div class="col s6 center">
+                            <a  class="btn" href="{{route('nacionalidad.index')}}">Cancelar</a>
+                        </div>
 
                 </div>
             </form>
-
+                </div>
         </div>
         <div class="col s12 m4">
         </div>

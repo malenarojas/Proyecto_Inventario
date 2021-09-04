@@ -41,7 +41,7 @@ class TipoPersonalController extends Controller
     public function edit($id)
     {
         $tipopersonal =tipo_personal::findOrFail($id);
-        return view('tipopersonal.edit',['tipopersonal '=>$tipopersonal]);
+        return view('tipopersonal.edit',['tipopersonal'=>$tipopersonal]);
     }
 
 

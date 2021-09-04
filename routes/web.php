@@ -26,7 +26,7 @@ use App\Http\Controllers\VentaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 
@@ -116,15 +116,6 @@ Route::group(['prefix'=>'personal'],function (){
     Route::get('/{id}/edit',[PersonalController::class,'edit'])->name('personal.edit');
     Route::get('/{id}/destroy',[PersonalController::class,'destroy'])->name('personal.destroy');
 });
-Route::group(['prefix'=>'User'],function (){
-    Route::get('/',[UserController::class,'index'])->name('users.index');
-    Route::post('/',[UserController::class,'store'])->name('users.store');
-    Route::get('/create',[UserController::class,'create'])->name('users.create');
-    Route::get('/{id}',[UserController::class,'show'])->name('users.show');
-    Route::put('/{id}',[UserController::class,'update'])->name('users.update');
-    Route::get('/{id}/edit',[UserController::class,'edit'])->name('users.edit');
-    Route::get('/{id}/destroy',[UserController::class,'destroy'])->name('users.destroy');
-});
 Route::group(['prefix'=>'proveedor'],function (){
     Route::get('/buscarproveedor',[ProveedorController::class,'buscarproveedor'])->name('proveedor.buscarproveedor');
     Route::get('/',[ProveedorController::class,'index'])->name('proveedor.index');
@@ -168,12 +159,12 @@ Route::group(['prefix'=>'venta'],function (){
 
 Route::get('prueba',function (){
 
-   $personal= \App\Models\personal::findOrFail(133);
+   $personal= \App\Models\personal::findOrFail(1);
 
    return $personal->tipopersonal->cargo;
 });
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -12,7 +12,7 @@
     @include('layouts.styles')
     @stack('styles')
 </head>
-<body >
+<body  >
     @include('layouts.header')
     <main class="primary-background">
         <div class="container"></div>

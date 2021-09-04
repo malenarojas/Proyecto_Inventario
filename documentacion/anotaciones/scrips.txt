@@ -1,0 +1,21 @@
+-javascrip es el leguaje de comunicacion con el servidor y la interfaz html
+-ajax es un libreria de jquery escrito en java scrip que lo podemos usar con el cdn
+-todo el codigo de javascrip da en una etiqueta script 
+-la nomenclatura de jquery es el signo de $ (string que sean simples dentro tiene un numeral que lo que hace s buscar ese nombre como id en todo el html)
+-la funcion keyup obtiene todos los caracteres que se obtine en la etiqueta imput
+-e.preventdefault evita que se refresque la interfaz(f5)
+-ajax tiene cuatro atributos: 
+  url busca en la carpeta web la ruta (uri)tipo 
+  type tipo de peticion al servidor 
+  async que no corresponde con el orden de ejecucion
+  data es el contenido request que se pasa con la peticion get mas el token
+  el resultado se llama success ahi decidimos que se hace si hay resultado o no (response==0)
+  cuando es cero noce hace nada
+  cuando hay datos: 
+     -hacemos un json.parce lo que nos devuelve es solo los valores del por atributo
+     ejemplo:[{,{,{]
+     -hacemos un forEach para convertirlo a objeto  ejemplo 
+     {.nombre 
+     - dentro de forEach el valor de cada objeto ala etiqueta html correspondiente en la vista 
+en la parte del controlador obtenemos los datos del request.
+al final hacemos una validacion si nos a devuelto algun valor la consulta de lo contrario devolvemos un response con los datos que queremos obtener

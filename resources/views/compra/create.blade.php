@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('titulo','create compra ')
 @section('contenido')
-    <div class="row">
+    <div class="row " >
         <div class="col s12">&nbsp;</div>
         <div class="col s12">&nbsp;</div>
         <div class="col s12">&nbsp;</div>
@@ -11,7 +11,7 @@
         <div class="col s12 m4">
         </div>
         <div class="col s12 m6 offset-m3 " >
-            <div class="row card">
+            <div class="row card " style="padding: 50px; vertical-align: center">
                 <form  method="POST" action="{{route('compra.store')}}">
                     @csrf
                     <span class="titulo-index">REGISTRO DE COMPRA</span>
@@ -47,9 +47,7 @@
                         </div>
                     </div>
                 </form>
-
             </div>
-
         </div>
         <div class="col s12 m4">
         </div>
